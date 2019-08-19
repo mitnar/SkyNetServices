@@ -28,11 +28,6 @@ class Database
 
     public function query($query)
     {
-        $queryResult = $this->mysqli->query($query);
-
-        if(!$queryResult)
-            return false;
-
-        return $queryResult;
+        return $this->mysqli->query($query);
     }
 }

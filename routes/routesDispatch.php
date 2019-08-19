@@ -15,7 +15,7 @@ $uri = rawurldecode($uri);
 $routeInfo = $dispatcher->dispatch($httpMethod, $uri);
 switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::NOT_FOUND:
-        echo json_encode(['result' => 'method_not_found']); // исключительно для тсетового задания
+        echo json_encode(['result' => 'method_not_found']); // исключительно для тетового задания
         break;
     case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
         $allowedMethods = $routeInfo[1];
