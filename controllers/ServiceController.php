@@ -1,4 +1,5 @@
 <?php
+declare (strict_types=1);
 
 require_once '../database/Database.php';
 require_once '../services/ServiceService.php';

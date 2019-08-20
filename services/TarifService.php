@@ -1,4 +1,5 @@
 <?php
+declare (strict_types=1);
 
 class TarifService
 {
@@ -9,7 +10,7 @@ class TarifService
         $this->db = Database::getInstance();
     }
 
-    public function getTarifs($tarif_group_id)
+    public function getTarifs(int $tarif_group_id): array
     {
         $res = $this->db->query("SELECT ID, title, price, pay_period, speed
                                         FROM tarifs

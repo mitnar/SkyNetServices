@@ -1,4 +1,5 @@
 <?php
+declare(strct_types=1);
 
 require_once '../database/Database.php';
 
@@ -11,7 +12,7 @@ class ServiceService
         $this->db = Database::getInstance();
     }
 
-    public function getServices($user_id, $service_id)
+    public function getServices(int $user_id, int $service_id): array
     {
         $res = $this->db->query("SELECT t.title, t.link, t.speed, tarif_group_id
                                         FROM services s
@@ -32,7 +33,7 @@ class ServiceService
         return $services;
     }
 
-    public function setService($user_id, $service_id, $tarif_id)
+    public function setService(int $user_id, int $service_id, int $tarif_id): void
     {
         if(!$this->db->query("UPDATE services 
                                      SET tarif_id = $tarif_id

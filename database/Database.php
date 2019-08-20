@@ -18,7 +18,7 @@ class Database
     }
 
     // Getter method for creating/returning the single instance of this class
-    public static function getInstance()
+    public static function getInstance(): object
     {
         if (!self::$m_pInstance) {
             self::$m_pInstance = new Database();
@@ -26,7 +26,7 @@ class Database
         return self::$m_pInstance;
     }
 
-    public function query($query)
+    public function query(string $query)
     {
         return $this->mysqli->query($query);
     }
